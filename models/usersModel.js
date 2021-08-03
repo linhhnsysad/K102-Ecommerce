@@ -11,6 +11,7 @@ mongoose.connect('mongodb://localhost/k12nodemy_project', {
 const usersSchema = mongoose.Schema({
    username: String,
    password: String,
+   role: String,
   
 
 },{collection: 'users'})
@@ -22,7 +23,11 @@ const usersModel = new mongoose.model('users',usersSchema )
 module.exports = usersModel;
 
 
-
+// usersModel.create({
+//   username: "test2",
+//    password: "aaa",
+//    role: "2",
+// })
 // productModel.create({
 //    idCatagories: 'phone',
 //    idSubCatagories: 'smartphone',
