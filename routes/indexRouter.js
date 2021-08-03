@@ -15,6 +15,11 @@ router.get('/', (req, res) => {
 router.get('/login', (req, res) => {
     res.render("../views/login")
 });
+
+router.get('/register', (req, res) => {
+    res.render("../views/register")
+});
+
 router.post('/login',(req,res)=>{
     usersModel.findOne({username: req.body.username, password: req.body.password})
     .then((data)=>{
