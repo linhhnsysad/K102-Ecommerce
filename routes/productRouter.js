@@ -13,6 +13,9 @@ router.get('/add', (req, res) => {
     res.render("../views/product_add")
 });
 
+
+
+
 router.get('/product', (req, res) => {
     productModel.find()
     .then((data)=>{
@@ -28,7 +31,7 @@ router.get('/product', (req, res) => {
 });
 
 
-router.post('/product/add', (req,res) =>{
+router.post('/add', (req,res) =>{
     try {
         const themproduct = new productModel({
             idCatagories: req.body.idCatagories,  //select 
