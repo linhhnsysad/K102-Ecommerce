@@ -17,7 +17,10 @@ const usersSchema = mongoose.Schema({
 
 const usersModel = new mongoose.model('users',usersSchema )
 
-
+usersModel.create({
+  username: "test",
+  password: "123",
+})
 
 module.exports = usersModel;
 
