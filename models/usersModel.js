@@ -11,12 +11,14 @@ mongoose.connect('mongodb://localhost/k12nodemy_project', {
 const usersSchema = mongoose.Schema({
    username: String,
    password: String,
-  
+  role:{
+    type:String,
+    default:'user'
+  }
 
 },{collection: 'users'})
 
 const usersModel = new mongoose.model('users',usersSchema )
-
 
 
 module.exports = usersModel;

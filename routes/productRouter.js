@@ -90,7 +90,7 @@ router.get("/phanloai", (req,res)=>{
     })
     
 });
-//API tim kiem theo IDCatagories
+//API tim kiem all => trang chu
 router.get("/dien-thoai", (req,res)=>{
     productModel.find()
     .then((data)=>{

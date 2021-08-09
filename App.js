@@ -2,11 +2,12 @@ const express = require("express");
 const path = require ("path");
 const app = express();
 const port = 3000;
+const cookieParser = require('cookie-parser')
 // const userModel = require ("./models/productModel");
 const productRouter = require("./routes/productRouter")
 const userRouter = require("./routes/usersRouter")
 const indexRouter = require("./routes/indexRouter")
-
+app.use(cookieParser())
 // parse application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: false }))
  

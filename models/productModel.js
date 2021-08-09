@@ -35,7 +35,30 @@ const productSchema = mongoose.Schema({
 },{collection: 'product'})
 
 const productModel = new mongoose.model('product',productSchema )
-
+// productModel.create({
+//     idCatagories: 'phone',
+//     idSubCatagories: 'smartphone',
+//     idDetailCatagories: 'bphone',
+//     productName: "test",
+//     productCode: "test",
+//     description: "test",
+//     color: "test",
+//     size:"test",
+//     price: "1",
+//     quality: "1",
+//     sold: "1",
+//     listimg:[
+//         { list: "link_http"},
+//  ],
+//       colorImg: [
+//        {link: "link IMG", }
+//     ],
+//     createDate: new Date(),
+//     info: [{
+//         infoTitle: "info_bphone",
+//         infoValue: "value_bphone",
+//     }]
+//  }),
 
 module.exports = productModel;
 
