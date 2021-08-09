@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
 router.get('/login', (req, res) => {
     res.render("../views/login")
 });
+//<<<<<<< anhdv
 // router.post('/login',(req,res)=>{
 //     usersModel.findOne({username: req.body.username, password: req.body.password})
 //     .then((data)=>{
@@ -35,6 +36,14 @@ router.get('/login', (req, res) => {
 // res.render("../views/product_add",{data:token});  
   // login
   router.post('/login',(req,res)=>{
+//=======
+
+router.get('/register', (req, res) => {
+    res.render("../views/register")
+});
+
+router.post('/login',(req,res)=>{
+//>>>>>>> main
     usersModel.findOne({username: req.body.username, password: req.body.password})
     .then((data)=>{
       if(data){

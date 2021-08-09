@@ -13,6 +13,9 @@ router.get('/add', (req, res) => {
     res.render("../views/product_add")
 });
 
+
+
+
 router.get('/product', (req, res) => {
     productModel.find()
     .then((data)=>{
