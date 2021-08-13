@@ -19,7 +19,9 @@ function checkToken(req,res,next){
 function checkLogin(req,res,next){
         let token= req.cookies.user;
         if(token){
+          // console.log(23,token)
           let id = jwt.verify(token,'projectk10').id;
+          // console.log(23,id)
           userModel.findOne({_id:id})
           .then((data)=>{
             if(data){
@@ -34,7 +36,6 @@ function checkLogin(req,res,next){
             }
           })
           .catch((err)=>{
-            console.log(err)
             res.json({mess:'loi server', status:500});
           })
         }else{
