@@ -1,4 +1,3 @@
-// const blacklist=require('./js/blacklist')
 const userModel= require("../../../models/usersModel")
 const jwt =require('jsonwebtoken')
 
@@ -19,30 +18,37 @@ function checkToken(req,res,next){
 
 function checkLogin(req,res,next){
         let token= req.cookies.user;
-        let id = jwt.verify(token,'projectk10').id;
-        userModel.findOne({_id:id})
-        .then((data)=>{
-          if(data){
-            req.role=data.role;
-            next();
-            
-          }else{
-            res.json({
-              mess:"Chưa đăng nhập",
-              status:400
-            })
-          }
-        })
-        .catch((err)=>{
-          console.log(err)
-          res.json({mess:'loi server', status:500});
-        })
+        if(token){
+          // console.log(23,token)
+          let id = jwt.verify(token,'projectk10').id;
+          // console.log(23,id)
+          userModel.findOne({_id:id})
+          .then((data)=>{
+            if(data){
+              req.role=data.role;
+              next();
+              
+            }else{
+              res.json({
+                mess:"Chưa đăng nhập",
+                status:400
+              })
+            }
+          })
+          .catch((err)=>{
+            res.json({mess:'loi server', status:500});
+          })
+        }else{
+          res.json({mess:'token k hop le', status:400});
+
+        }
+
 }
 // check quyền 
 async function checkQuyen(req,res,next){
   try {
     let token= req.cookies.user;
-  let id = jwt.verify(token,'vanh').id;
+  let id = jwt.verify(token,'projectk10').id;
   let checkID= await userModel.findOne({_id:id})
   // console.log(47, checkID);
   if (checkID.role=='admin'){

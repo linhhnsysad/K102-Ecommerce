@@ -14,7 +14,8 @@ const usersSchema = mongoose.Schema({
   role:{
     type:String,
     default:'user'
-  }
+  },
+  token:String,
 
 },{collection: 'users'})
 

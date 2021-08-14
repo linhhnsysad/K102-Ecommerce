@@ -1,15 +1,15 @@
 $(".login").on("click", function(){
 let username=$("#email").val();
 let password=$("#password").val();
-console.log(username,password)
+// console.log(username,password)
 $.ajax({
     url:"/login",
     type:"POST",
     data:{username,password}
 })
 .then(function(data){
-    console.log(data);
-    if(data.status==200 && data.data.role === 'user'){
+    // console.log(data);
+    if(data.status === 200 && data.data.role === 'user'){
         setCookie("user",data.data.token,30);
         window.location.href="/";
     }
@@ -39,13 +39,11 @@ if(token){
         url:'/checkLogin',
         type:'POST'
     }).then(data=>{
-        console.log(data)
+        // console.log(42,data)
         if(data.status==200 && data.data === 'user'){
-            setCookie("user",data.data.token,30);
             window.location.href="/";
         }
         else if(data.status==200 && data.data === 'admin'){
-            setCookie("user",data.data.token,30);
             window.location.href="/product/product";
         }else{
             alert('token k hợp lệ')
@@ -69,4 +67,23 @@ function getCookie(cname) {
       }
     }
     return "";
-  }
+  };
+  // logout
+//   function logout(){
+//       $.ajax({
+//         url:'/logout',
+//         type:'POST'
+//       })
+//       .then((data)=>{
+//         delete_cookie('user');
+//         window.location.href='/';
+//       })
+//       .catch((err)=>{
+//         console.log(err);
+//       })
+//   }
+
+//   function delete_cookie(name) {
+//     document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  //}
+  
