@@ -23,7 +23,10 @@ router.get('/login', (req, res) => {
 router.get('/Profile',(req,res)=>{
   res.render("../views/profile")
 });
-//
+// Chi tiết sản phẩm
+router.get('/product_details', (req, res) => {
+  res.render("../views/product_details")
+});
 //<<<<<<< anhdv
 // router.post('/login',(req,res)=>{
 //     usersModel.findOne({username: req.body.username, password: req.body.password})
