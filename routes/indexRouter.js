@@ -27,6 +27,12 @@ router.get('/Profile',(req,res)=>{
 router.get('/product_details', (req, res) => {
   res.render("../views/product_details")
 });
+// giỏ hàng cart
+router.get('/cart', (req, res) => {
+  res.render("../views/cart")
+});
+//
+
 //<<<<<<< anhdv
 // router.post('/login',(req,res)=>{
 //     usersModel.findOne({username: req.body.username, password: req.body.password})
