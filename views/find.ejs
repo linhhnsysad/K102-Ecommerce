@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./components/head") %>
+    <link rel="stylesheet" href="/views/assets/css/find.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="main-header " id="header">
+        <nav class=" navbar navbar-static-top navbar-expand-lg">
+            <div class="navbar-brand"><a href="/">TIKI - Ecommerce</a></div>
+            <!-- Sidebar toggle button -->
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown notifications-menu show">
+                        <button class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="mdi mdi-menu"><a class=""></a> </i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li>
+                                <a href="#">
+                                    <i class="mdi mdi-cellphone-iphone"></i> Điện thoại - Máy tính bảng
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="mdi mdi-account-remove"></i> Điện tử - điện lạnh
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="mdi mdi-chart-areaspline"></i> Phụ kiện - Thiết bị số
+
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="mdi mdi-account-supervisor"></i> Laptop - Thiết bị IT
+
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="mdi mdi-server-network-off"></i> Máy ảnh - Quay phim
+
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="mdi mdi-server-network-off"></i> Điện gia dụng
+
+                                </a>
+                            </li>
+
+                            <li class="dropdown-footer">
+                                <a class="text-center" href="#"> View All </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- search form -->
+            <div class="search-form d-none d-lg-inline-block">
+                <div class="input-group">
+                    <button type="button" name="search" id="search-btn" class="btn btn-flat">
+                        <i class="mdi mdi-magnify"></i>
+                    </button>
+                    <input type="text" name="query" id="search-input" class="form-control"
+                        placeholder="'button', 'chart' etc." autofocus autocomplete="off" />
+                </div>
+                <div id="search-results-container">
+                    <ul id="search-results"></ul>
+                </div>
+            </div>
+
+            <div class="navbar-right ">
+                <ul class="nav navbar-nav">
+                    <!-- Github Link Button -->
+                    <!-- <li class="github-link mr-3">
+                        <a class="btn btn-outline-secondary btn-sm"
+                            href="https://github.com/tafcoder/sleek-dashboard" target="_blank">
+                            <span class="d-none d-md-inline-block mr-2">Source Code</span>
+                            <i class="mdi mdi-github-circle"></i>
+                        </a>
+    
+                    </li> -->
+                    <!-- User Account -->
+                    <li class="dropdown user-menu">
+                        <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                            <i class="mdi mdi-account"> </i>
+
+                            <!-- <img src="/views/assets/img/user/user.png" class="user-image" alt="User Image" /> -->
+                            <span class="d-none d-lg-inline-block">Account</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <!-- User image -->
+                            <!-- <li class="dropdown-header">
+                                <img src="/views/assets/img/user/user.png" class="img-circle" alt="User Image" />
+                                <div class="d-inline-block">
+                                    Abdus Salam <small class="pt-1">abdus@gmail.com</small>
+                                </div>
+                            </li> -->
+
+                            <li>
+                                <a href="/login">
+                                    <i class="mdi mdi-login-variant"></i> Login
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/register">
+                                    <i class="mdi mdi-account-box"></i> Register
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                    <!-----Cart Icon-->
+                    <li class="dropdown notifications-menu">
+                        <button class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="mdi mdi-cart-outline"> </i>
+                        </button>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 navbar-l">
+                <div class="block">
+                    <b>Danh mục sản phẩm</b>
+                    <p><a href="">Tên danh mục sản phẩm</a></p>
+                    <hr>
+                </div>
+                <div class="block">
+                    <b>Địa chỉ nhận hàng</b>
+                    <p>Bạn muốn nhận hàng ở đâu ?</p>
+                    <p><a href="">Nhập địa chỉ</a></p>
+                    <hr>
+                </div>
+                <div class="block">
+                    <b>Dịch vụ</b>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <img class="filter-icon" width="56" height="25" src="https://salt.tikicdn.com/ts/upload/f9/ad/0e/a8a97f5ac7661d637942b42796893662.png"> <span>Giao siêu tốc 2h</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <img class="filter-icon" width="50" height="24" src="https://salt.tikicdn.com/ts/upload/1a/1a/33/228effe1f1884909415a0b5a4321b7bd.png"> <span>Chọn giờ giao lắp</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <img class="filter-icon" width="76" height="24" src="https://salt.tikicdn.com/ts/upload/af/84/fc/2037c3b93a81767aed21358ebf3f8b8e.png"> <span>Không giới hạn!</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span> Rẻ hơn hoàn tiền</span></span></p>
+                    <hr>
+                </div>
+                <div class="block">
+                    <b>Đánh giá</b>
+                    <p><a href="" style="color: yellow;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </a><span>Từ 5 sao</span></p>
+                    <p><a href="" style="color: yellow;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> </a><span>Từ 4 sao</span></p>
+                    <p><a href="" style="color: yellow;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></i> </a><span>Từ 3 sao</span></p>
+                    <hr>
+                </div>
+                <div class="block">
+                    <b>Giá</b>
+                    <p><button type="button" class="btn btn-secondary btn1">Dưới 1,500,000đ</button></p>
+                    <p><button type="button" class="btn btn-secondary btn1">Từ 1,500,000đ đến 7,500,000đ</button></p>
+                    <p><button type="button" class="btn btn-secondary btn1"> Trên 7,500,000đ</button></p>
+                    <p>Chọn khoảng giá</p>
+                    <p><input type="number" style="width: 100px;"><span> - </span><input type="number" style="width: 100px;"></p>
+                    <p><button type="button" class="btn btn-info">Áp dụng</button></p>
+                    <hr>
+                </div>
+                <div class="block">
+                    <b>Thương hiệu</b>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Samsung</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Palasonic</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Apple</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Nokia</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Xiaomi</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Sharp</span></span></p>
+
+                    <hr>
+                </div>
+                <div class="block">
+                    <b>Màu Sắc</b>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Đỏ</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Trắng</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Đen</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Xanh</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Vàng</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Cam</span></span></p>
+
+                    <hr>
+                </div>
+                <div class="block">
+                    <b>kích cỡ</b>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>S</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>L</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>ML</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>M</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>XL</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>SL</span></span></p>
+
+                    <hr>
+                </div>
+                <div class="block">
+                    <b>Nhà cung cấp </b>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Tiki Trading</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Khánh Dung</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Lọc nước  Aquawin</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Minh Ngọc Mobile</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Điện máy xanh</span></span></p>
+                    <p> <input type="checkbox" name="" id="" width="15px"> <span> <span>Gia dụng Việt</span></span></p>
+                    <hr>
+                </div>
+                <div class="block">
+                    <b>Giao hàngg</b>
+                    <p> <input type="radio" name="" id="" width="15px"> <span> <span>Hàng nội địa</span></span></p>
+                    <p> <input type="radio" name="" id="" width="15px"> <span> <span>Hàng quốc tế</span></span></p>
+                    <hr>
+                </div>
+            </div>
+            <div class="col-md-9 navbar-2">
+                <div id="carouselTestimonial" class="carousel carousel-testimonial slide" data-ride="carousel">
+                    <ol class="carousel-indicators indicator-success">
+                        <li data-target="#carouselTestimonial" data-slide-to="0" class=""></li>
+                        <li data-target="#carouselTestimonial" data-slide-to="1" class="active"></li>
+                        <li data-target="#carouselTestimonial" data-slide-to="2" class="active"></li>
+    
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item">
+                            <div class="card border-0 text-center">
+                                <div class="card-img-wrapper ">
+                                    <img src="../views/assets/img/slide1.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="card-body">
+                                    <p>
+                                    </p>
+    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card border-0 text-center">
+                                <div class="card-img-wrapper ">
+                                    <img src="../views/assets/img/slide2.jpg" alt="" class="img-fluid">
+                                </div>
+                                <!-- <div class="card-body">
+                           
+                        </div> -->
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card border-0 text-center">
+                                <div class="card-img-wrapper ">
+                                    <img src="../views/assets/img/slide3.jpg" alt="" class="img-fluid">
+                                </div>
+                                <!-- <div class="card-body">
+                            <p>
+                            </p>
+                          
+                        </div> -->
+                            </div>
+                        </div>
+                        <div class="carousel-item active">
+                            <div class="card border-0 text-center">
+                                <div class="card-img-wrapper">
+                                    <img src="../views/assets/img/slide3.jpg" alt="" class="img-fluid">
+                                </div>
+                                <!-- <div class="card-body">
+                            <p>
+                            </p>
+                        </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselTestimonial" role="button" data-slide="prev">
+                        <span class="mdi mdi-chevron-left mdi-36px" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselTestimonial" role="button" data-slide="next">
+                        <span class="mdi mdi-chevron-right mdi-36px" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-5.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">TV Samsung</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$16.00</li>
+                                            <li class="new_price">$13.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-6.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Tủ Lạnh SHARP</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$12.00</li>
+                                            <li class="new_price">$11.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-7.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Máy ảnh Canon</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$23.00</li>
+                                            <li class="new_price">$17.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-4.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Simple Black Clock</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$16.00</li>
+                                            <li class="new_price">$10.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-8.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Máy giặt Sanyo</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$18.00</li>
+                                            <li class="new_price">$15.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-9.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Quạt cây đứng</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$21.00</li>
+                                            <li class="new_price">$17.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-10.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Iphone 12 Pro max</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$16.00</li>
+                                            <li class="new_price">$10.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-11.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Điều hòa Panasonic</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$16.00</li>
+                                            <li class="new_price">$10.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-12.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Tai nghe Bluetooth</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$16.00</li>
+                                            <li class="new_price">$10.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-13.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Bàn phím cơ Black</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$16.00</li>
+                                            <li class="new_price">$10.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-14.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Màn hình Dell U24  </a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$16.00</li>
+                                            <li class="new_price">$10.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-15.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html"> Macbook Pro 2020</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$16.00</li>
+                                            <li class="new_price">$10.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-5.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">TV Samsung</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$16.00</li>
+                                            <li class="new_price">$13.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-6.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Tủ Lạnh SHARP</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$12.00</li>
+                                            <li class="new_price">$11.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-7.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Máy ảnh Canon</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$23.00</li>
+                                            <li class="new_price">$17.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-4.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Simple Black Clock</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$16.00</li>
+                                            <li class="new_price">$10.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-8.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Máy giặt Sanyo</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$18.00</li>
+                                            <li class="new_price">$15.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-9.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Quạt cây đứng</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$21.00</li>
+                                            <li class="new_price">$17.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-10.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Iphone 12 Pro max</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$16.00</li>
+                                            <li class="new_price">$10.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-11.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Điều hòa Panasonic</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$16.00</li>
+                                            <li class="new_price">$10.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-12.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Tai nghe Bluetooth</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$16.00</li>
+                                            <li class="new_price">$10.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-13.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Bàn phím cơ Black</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$16.00</li>
+                                            <li class="new_price">$10.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-14.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html">Màn hình Dell U24  </a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$16.00</li>
+                                            <li class="new_price">$10.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card product_item">
+                                <div class="body">
+                                    <div class="cp_img">
+                                        <img src="../views/assets/img/products/com-15.jpg" alt="Product" class="img-fluid">
+                                        <div class="hover">
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product_details">
+                                        <h5><a href="ec-product-detail.html"> Macbook Pro 2020</a></h5>
+                                        <ul class="product_price list-unstyled">
+                                            <li class="old_price">$16.00</li>
+                                            <li class="new_price">$10.00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</body>
+<script src="/views/assets/js/home.js"></script>
+
+</html>

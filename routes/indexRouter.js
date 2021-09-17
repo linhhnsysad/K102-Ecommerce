@@ -32,7 +32,9 @@ router.get('/cart', (req, res) => {
   res.render("../views/cart")
 });
 //
-
+router.get('/find', (req, res) => {
+  res.render("../views/find")
+});
 //<<<<<<< anhdv
 // router.post('/login',(req,res)=>{
 //     usersModel.findOne({username: req.body.username, password: req.body.password})
