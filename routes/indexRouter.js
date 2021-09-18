@@ -19,6 +19,22 @@ router.get('/', (req, res) => {
 router.get('/login', (req, res) => {
     res.render("../views/login")
 });
+// Profile
+router.get('/Profile',(req,res)=>{
+  res.render("../views/profile")
+});
+// Chi tiết sản phẩm
+router.get('/product_details', (req, res) => {
+  res.render("../views/product_details")
+});
+// giỏ hàng cart
+router.get('/cart', (req, res) => {
+  res.render("../views/cart")
+});
+//
+router.get('/find', (req, res) => {
+  res.render("../views/find")
+});
 //<<<<<<< anhdv
 // router.post('/login',(req,res)=>{
 //     usersModel.findOne({username: req.body.username, password: req.body.password})

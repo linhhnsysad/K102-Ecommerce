@@ -23,6 +23,11 @@ if(token){
         console.log(data)
         if(data.status==200 && data.data === 'user'){
             let logout = `
+            <li>
+                <a href="/Profile">
+                    <i class="mdi mdi-account"></i> My Profile
+                </a>
+            </li>
             <li onclick = 'logout()'>
                 <a>
                     <i class="mdi mdi-logout"></i>Logout
