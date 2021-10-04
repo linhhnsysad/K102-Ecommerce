@@ -1,30 +1,42 @@
-const mongoose = require('mongoose');
-const path = require ("path");
+const mongoose = require("mongoose");
+const path = require("path");
 
-mongoose.connect('mongodb://localhost/k12nodemy_project', {
+mongoose.connect("mongodb://localhost/k12nodemy_project", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
-  useCreateIndex: true
+  useCreateIndex: true,
 });
 
-const usersSchema = mongoose.Schema({
-   username: String,
-   password: String,
-  role:{
-    type:String,
-    default:'user'
+// const usersSchema = mongoose.Schema({
+//   username: String,
+//   password: String,
+//  role:{
+//    type:String,
+//    default:'user'
+//  },
+//  token:String,
+
+// },{collection: 'users'})
+const usersSchema = mongoose.Schema(
+  {
+    role: { type: String, default: "user" },
+    idcart: [{ type: String, ref: "carts" }],
+    username: String,
+    password: String,
+    email: String,
+    phone: String,
+    sex: String,
+    dob: Date,
+    address: String,
+    createDate: Date,
   },
-  token:String,
+  { collection: "users" }
+);
 
-},{collection: 'users'})
-
-const usersModel = new mongoose.model('users',usersSchema )
-
+const usersModel = mongoose.model("users", usersSchema);
 
 module.exports = usersModel;
-
-
 
 // productModel.create({
 //    idCatagories: 'phone',
@@ -85,7 +97,7 @@ module.exports = usersModel;
 //        quality: "10",
 //        sold: "1",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{
@@ -106,7 +118,7 @@ module.exports = usersModel;
 //        quality: "10",
 //        sold: "8",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{
@@ -127,7 +139,7 @@ module.exports = usersModel;
 //        quality: "11",
 //        sold: "2",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{
@@ -148,7 +160,7 @@ module.exports = usersModel;
 //        quality: "8",
 //        sold: "5",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{
@@ -169,7 +181,7 @@ module.exports = usersModel;
 //        quality: "8",
 //        sold: "4",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{
@@ -190,7 +202,7 @@ module.exports = usersModel;
 //        quality: "6",
 //        sold: "2",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{
@@ -211,7 +223,7 @@ module.exports = usersModel;
 //        quality: "10",
 //        sold: "3",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{
@@ -232,7 +244,7 @@ module.exports = usersModel;
 //        quality: "10",
 //        sold: "5",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{
@@ -253,7 +265,7 @@ module.exports = usersModel;
 //        quality: "10",
 //        sold: "4",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{

@@ -1,40 +1,55 @@
-const mongoose = require('mongoose');
-const path = require ("path");
+const mongoose = require("mongoose");
+const path = require("path");
 
-mongoose.connect('mongodb://localhost/k12nodemy_project', {
+mongoose.connect("mongodb://localhost/k12nodemy_project", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
-  useCreateIndex: true
+  useCreateIndex: true,
 });
+// const productSchema = mongoose.Schema({
+//   idCatagories: String,
+//   idSubCatagories: String,
+//   idDetailCatagories: String,
+//   productName: String,
+//   productCode: String,
+//   description: String,
+//   color: String,
+//   size:String,
+//   price: Number,
+//   quality: Number,
+//   sold: Number,
+//   createDate: Date,
+//   colorImg: [
+//       {link: String, }
+//   ],
+//   listImg:[
+//       {list: String,}
+//   ],
+//   info: [{
+//       infoTitle: String,
+//       infoValue: String,
+//   }],
 
-const productSchema = mongoose.Schema({
-   idCatagories: String,
-   idSubCatagories: String,
-   idDetailCatagories: String,
-   productName: String,
-   productCode: String,
-   description: String,
-   color: String,
-   size:String,
-   price: Number,
-   quality: Number,
-   sold: Number,
-   createDate: Date,
-   colorImg: [
-       {link: String, }
-   ],
-   listImg:[
-       {list: String,}
-   ],
-   info: [{
-       infoTitle: String,
-       infoValue: String,
-   }],
+// },{collection: 'product'})
+const productSchema = mongoose.Schema(
+  {
+    idCatagories: [{ type: String, ref: "catagories" }],
+    productName: String,
+    productCode: String,
+    ListImg: [{ type: String }],
+    price: Number,
+    quality: Number,
+    info: [{ infoTitle: String, infoValue: String }],
+    description: String,
+    color: String,
+    size: String,
+    createDate: Date,
+  },
+  { collection: "product" }
+);
 
-},{collection: 'product'})
-
-const productModel = new mongoose.model('product',productSchema )
+const productModel = mongoose.model("product", productSchema);
 // productModel.create({
 //     idCatagories: 'phone',
 //     idSubCatagories: 'smartphone',
@@ -61,8 +76,6 @@ const productModel = new mongoose.model('product',productSchema )
 //  }),
 
 module.exports = productModel;
-
-
 
 // productModel.create({
 //    idCatagories: 'phone',
@@ -123,7 +136,7 @@ module.exports = productModel;
 //        quality: "10",
 //        sold: "1",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{
@@ -144,7 +157,7 @@ module.exports = productModel;
 //        quality: "10",
 //        sold: "8",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{
@@ -165,7 +178,7 @@ module.exports = productModel;
 //        quality: "11",
 //        sold: "2",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{
@@ -186,7 +199,7 @@ module.exports = productModel;
 //        quality: "8",
 //        sold: "5",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{
@@ -207,7 +220,7 @@ module.exports = productModel;
 //        quality: "8",
 //        sold: "4",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{
@@ -228,7 +241,7 @@ module.exports = productModel;
 //        quality: "6",
 //        sold: "2",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{
@@ -249,7 +262,7 @@ module.exports = productModel;
 //        quality: "10",
 //        sold: "3",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{
@@ -270,7 +283,7 @@ module.exports = productModel;
 //        quality: "10",
 //        sold: "5",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{
@@ -291,7 +304,7 @@ module.exports = productModel;
 //        quality: "10",
 //        sold: "4",
 //        listimg:[{
-    
+
 //        }],
 //        createDate: new Date(),
 //        info: [{
